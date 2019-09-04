@@ -1,0 +1,12 @@
+
+*.o
+*.dia
+*.yaml
+*.plist
+*.hmap
+*.xcbuild
+*.xcent
+*.db
+*.dat
+*.d
+*.LinkFileList
