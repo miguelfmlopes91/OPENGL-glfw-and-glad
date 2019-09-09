@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../OPENGL GLAD/glad.c">
-   </FileRef>
-   <FileRef
       location = "self:OPENGL GLAD.xcodeproj">
    </FileRef>
 </Workspace>
