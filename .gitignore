@@ -10,3 +10,7 @@
 *.dat
 *.d
 *.LinkFileList
+*.idx
+*.idx
+*.xcuserstate
+*.modulevalidation
