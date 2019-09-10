@@ -31,6 +31,9 @@
 		20648096231F25BF00860B64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2064809E231F25DF00860B64 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		206480A0231F25FF00860B64 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		20E99CE92326C4F2009332A7 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		20F25879232842E40098D64D /* 3.3.shader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 3.3.shader.fs; path = "OPENGL GLAD/3.3.shader.fs"; sourceTree = "<group>"; };
+		20F2587A232842E40098D64D /* 3.3.shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 3.3.shader.vs; path = "OPENGL GLAD/3.3.shader.vs"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,8 @@
 			children = (
 				20648095231F25BF00860B64 /* OPENGL GLAD */,
 				20648094231F25BF00860B64 /* Products */,
+				20F25879232842E40098D64D /* 3.3.shader.fs */,
+				20F2587A232842E40098D64D /* 3.3.shader.vs */,
 				2064809D231F25DF00860B64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +73,7 @@
 			children = (
 				204097AC23205E5E00D62E13 /* glad.c */,
 				20648096231F25BF00860B64 /* main.cpp */,
+				20E99CE92326C4F2009332A7 /* Shader.h */,
 			);
 			path = "OPENGL GLAD";
 			sourceTree = "<group>";

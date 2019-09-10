@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/3.3.shader.fs">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/3.3.shader.vs">
+   </FileRef>
+   <FileRef
       location = "self:OPENGL GLAD.xcodeproj">
    </FileRef>
 </Workspace>
