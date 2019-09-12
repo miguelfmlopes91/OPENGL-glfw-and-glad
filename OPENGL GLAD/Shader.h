@@ -33,6 +33,7 @@ public:
             // read file's buffer contents into streams
             vShaderStream << vShaderFile.rdbuf();
             fShaderStream << fShaderFile.rdbuf();
+            //std::cout<<vShaderStream.str()<<std::endl;
             // close file handlers
             vShaderFile.close();
             fShaderFile.close();
