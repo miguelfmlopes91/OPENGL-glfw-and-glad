@@ -44,6 +44,7 @@
 		20648096231F25BF00860B64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2064809E231F25DF00860B64 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		206480A0231F25FF00860B64 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		2077E6FE23319B2200C0ACAA /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		20E99CE92326C4F2009332A7 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		20F2587B2328530E0098D64D /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stb_image.cpp; path = "/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/stb_image.cpp"; sourceTree = "<absolute>"; };
 		20F2587C2328530E0098D64D /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = "/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/stb_image.h"; sourceTree = "<absolute>"; };
@@ -86,6 +87,7 @@
 				20F2587C2328530E0098D64D /* stb_image.h */,
 				204097AC23205E5E00D62E13 /* glad.c */,
 				20648096231F25BF00860B64 /* main.cpp */,
+				2077E6FE23319B2200C0ACAA /* Camera.h */,
 				20E99CE92326C4F2009332A7 /* Shader.h */,
 				201A2123232EE48300584D54 /* resources */,
 			);
