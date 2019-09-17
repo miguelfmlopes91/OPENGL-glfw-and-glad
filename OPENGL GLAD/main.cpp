@@ -22,11 +22,10 @@
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
-float lastX = 400, lastY = 300;
 
 glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -35,9 +34,12 @@ glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
 float deltaTime = 0.0f;    // Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
 
-float yaw, pitch;
-
 bool firstMouse = true;
+float yaw   = -90.0f;    // yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
+float pitch =  0.0f;
+float lastX =  800.0f / 2.0;
+float lastY =  600.0f / 2.0;
+float fov   =  45.0f;
 
 int main()
 {
@@ -63,10 +65,12 @@ int main()
     }
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
 
     
+    // tell GLFW to capture our mouse
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -215,21 +219,18 @@ int main()
     ourShader.setInt("texture1", 0);
     ourShader.setInt("texture2", 1);
     
-    // pass projection matrix to shader (as projection matrix rarely changes there's no need to do this per frame)
-    // -----------------------------------------------------------------------------------------------------------
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-    ourShader.setMat4("projection", projection);
+
     
     // render loop
     // -----------
 
     while (!glfwWindowShouldClose(window))
     {
+        // per-frame time logic
+        // --------------------
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
-        
-
         
         // input
         // -----
@@ -251,7 +252,7 @@ int main()
         
         // create transformations
         // camera/view transformation
-        glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        //glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
 //        float radius = 1.0f;
 //        float camX   = sin(glfwGetTime()) * radius;
 //        float camZ   = cos(glfwGetTime()) * radius;
@@ -260,8 +261,16 @@ int main()
 //                           glm::vec3(0.0f, 0.0f, 0.0f),//target position
 //                           glm::vec3(0.0f, 5.0f, 0.0f));//up vector
 
-        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-
+//        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+//
+//        ourShader.setMat4("view", view);
+        
+        // pass projection matrix to shader (note that in this case it could change every frame)
+        glm::mat4 projection = glm::perspective(glm::radians(fov), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        ourShader.setMat4("projection", projection);
+        
+        // camera/view transformation
+        glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
         ourShader.setMat4("view", view);
         
         // render boxes
@@ -354,4 +363,14 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     front.y = sin(glm::radians(pitch));
     front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
     cameraFront = glm::normalize(front);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    if(fov >= 1.0f && fov <= 45.0f)
+        fov -= yoffset;
+    if(fov <= 1.0f)
+        fov = 1.0f;
+    if(fov >= 45.0f)
+        fov = 45.0f;
 }
