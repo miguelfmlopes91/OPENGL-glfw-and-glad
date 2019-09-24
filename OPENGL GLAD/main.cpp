@@ -238,7 +238,8 @@ int main()
         lightingShader.setVec3("light.position",  camera.Position);
         lightingShader.setVec3("light.direction", camera.Front);
         lightingShader.setFloat("light.cutOff",   glm::cos(glm::radians(12.5f)));
-        
+        lightingShader.setFloat("light.outerCutOff", glm::cos(glm::radians(17.5f)));
+
         // light properties
         //lightingShader.setVec3("light.direction", -0.2f, -1.0f, -0.3f);
 
@@ -251,7 +252,7 @@ int main()
         lightingShader.setFloat("light.quadratic", 0.032f);
         
         // material properties
-        lightingShader.setFloat("material.shininess", 64.0f);
+        lightingShader.setFloat("material.shininess", 32.0f);
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
