@@ -12,6 +12,7 @@
 		20648097231F25BF00860B64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20648096231F25BF00860B64 /* main.cpp */; };
 		2064809F231F25DF00860B64 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2064809E231F25DF00860B64 /* OpenGL.framework */; };
 		206480A1231F25FF00860B64 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 206480A0231F25FF00860B64 /* libglfw.3.3.dylib */; };
+		2077E76D233D6A0E00C0ACAA /* libassimp.4.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2077E76C233D6A0E00C0ACAA /* libassimp.4.1.0.dylib */; };
 		20F2587D2328530E0098D64D /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20F2587B2328530E0098D64D /* stb_image.cpp */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,9 @@
 		2064809E231F25DF00860B64 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		206480A0231F25FF00860B64 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		2077E6FE23319B2200C0ACAA /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		2077E74D233C1E7D00C0ACAA /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		2077E74E233D576500C0ACAA /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		2077E76C233D6A0E00C0ACAA /* libassimp.4.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.4.1.0.dylib; path = ../../../../../usr/local/Cellar/assimp/4.1.0/lib/libassimp.4.1.0.dylib; sourceTree = "<group>"; };
 		20E99CE92326C4F2009332A7 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		20F2587B2328530E0098D64D /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stb_image.cpp; path = "/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/stb_image.cpp"; sourceTree = "<absolute>"; };
 		20F2587C2328530E0098D64D /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = "/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/stb_image.h"; sourceTree = "<absolute>"; };
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2077E76D233D6A0E00C0ACAA /* libassimp.4.1.0.dylib in Frameworks */,
 				206480A1231F25FF00860B64 /* libglfw.3.3.dylib in Frameworks */,
 				2064809F231F25DF00860B64 /* OpenGL.framework in Frameworks */,
 			);
@@ -85,9 +90,11 @@
 			children = (
 				20F2587B2328530E0098D64D /* stb_image.cpp */,
 				20F2587C2328530E0098D64D /* stb_image.h */,
+				2077E74D233C1E7D00C0ACAA /* Mesh.h */,
 				204097AC23205E5E00D62E13 /* glad.c */,
 				20648096231F25BF00860B64 /* main.cpp */,
 				2077E6FE23319B2200C0ACAA /* Camera.h */,
+				2077E74E233D576500C0ACAA /* Model.h */,
 				20E99CE92326C4F2009332A7 /* Shader.h */,
 				201A2123232EE48300584D54 /* resources */,
 			);
@@ -97,6 +104,7 @@
 		2064809D231F25DF00860B64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2077E76C233D6A0E00C0ACAA /* libassimp.4.1.0.dylib */,
 				206480A0231F25FF00860B64 /* libglfw.3.3.dylib */,
 				2064809E231F25DF00860B64 /* OpenGL.framework */,
 			);
@@ -292,6 +300,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/assimp/4.1.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -309,6 +318,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/assimp/4.1.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
