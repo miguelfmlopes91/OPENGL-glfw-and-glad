@@ -175,7 +175,11 @@ int main()
         // render
         // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);// clear the depth buffer before each render iteration 
+        //glDepthMask(GL_FALSE);
+        
+        glDepthFunc(GL_LESS); //used by default anyway
+
         
         // don't forget to enable shader before setting uniforms
         ourShader.use();
