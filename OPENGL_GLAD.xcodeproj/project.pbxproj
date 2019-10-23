@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200587BF235F222500DDB53A /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 200587BD235F222500DDB53A /* stb_image.cpp */; };
+		200587C1235F26E900DDB53A /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 200587C0235F26E900DDB53A /* glad.c */; };
 		201A2128232EE5CA00584D54 /* resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 201A2123232EE48300584D54 /* resources */; };
-		204097AD23205E5E00D62E13 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 204097AC23205E5E00D62E13 /* glad.c */; };
 		20648097231F25BF00860B64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20648096231F25BF00860B64 /* main.cpp */; };
 		2064809F231F25DF00860B64 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2064809E231F25DF00860B64 /* OpenGL.framework */; };
 		206480A1231F25FF00860B64 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 206480A0231F25FF00860B64 /* libglfw.3.3.dylib */; };
 		2077E76D233D6A0E00C0ACAA /* libassimp.4.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2077E76C233D6A0E00C0ACAA /* libassimp.4.1.0.dylib */; };
-		20F2587D2328530E0098D64D /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20F2587B2328530E0098D64D /* stb_image.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,8 +39,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		200587BD235F222500DDB53A /* stb_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
+		200587BE235F222500DDB53A /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		200587C0235F26E900DDB53A /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../glad/src/glad.c; sourceTree = "<group>"; };
 		201A2123232EE48300584D54 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
-		204097AC23205E5E00D62E13 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		20648093231F25BF00860B64 /* OPENGL GLAD */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OPENGL GLAD"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20648096231F25BF00860B64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2064809E231F25DF00860B64 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -50,8 +52,6 @@
 		2077E74E233D576500C0ACAA /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		2077E76C233D6A0E00C0ACAA /* libassimp.4.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.4.1.0.dylib; path = ../../../../../usr/local/Cellar/assimp/4.1.0/lib/libassimp.4.1.0.dylib; sourceTree = "<group>"; };
 		20E99CE92326C4F2009332A7 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
-		20F2587B2328530E0098D64D /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stb_image.cpp; path = "/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/stb_image.cpp"; sourceTree = "<absolute>"; };
-		20F2587C2328530E0098D64D /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = "/Users/miguel.lopes/Documents/GitHub/OPENGL GLAD/OPENGL GLAD/stb_image.h"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +88,10 @@
 		20648095231F25BF00860B64 /* OPENGL GLAD */ = {
 			isa = PBXGroup;
 			children = (
-				20F2587B2328530E0098D64D /* stb_image.cpp */,
-				20F2587C2328530E0098D64D /* stb_image.h */,
+				200587C0235F26E900DDB53A /* glad.c */,
+				200587BD235F222500DDB53A /* stb_image.cpp */,
+				200587BE235F222500DDB53A /* stb_image.h */,
 				2077E74D233C1E7D00C0ACAA /* Mesh.h */,
-				204097AC23205E5E00D62E13 /* glad.c */,
 				20648096231F25BF00860B64 /* main.cpp */,
 				2077E6FE23319B2200C0ACAA /* Camera.h */,
 				2077E74E233D576500C0ACAA /* Model.h */,
@@ -168,9 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F2587D2328530E0098D64D /* stb_image.cpp in Sources */,
+				200587BF235F222500DDB53A /* stb_image.cpp in Sources */,
 				20648097231F25BF00860B64 /* main.cpp in Sources */,
-				204097AD23205E5E00D62E13 /* glad.c in Sources */,
+				200587C1235F26E900DDB53A /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
